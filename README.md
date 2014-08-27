@@ -1,4 +1,4 @@
-votainteligente-venezuela-theme
+votainteligente-bolivia-theme
 ===============================
 
-Theme para votainteligente-portal-electoral
+Theme for votainteligente-portal-electoral for Bolivia
