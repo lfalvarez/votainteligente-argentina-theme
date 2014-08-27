@@ -60,11 +60,9 @@
                     <div class="collapse navbar-collapse">
                         {% get_flatpages as flatpages %}
                         <ul class="nav navbar-nav">
-                            <li><a href="#" target="_blank">Página 01</a></li>
                             {% for page in flatpages %}
                             <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                             {% endfor %}
-                            <li><a href="#" target="_blank">Página 02</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
