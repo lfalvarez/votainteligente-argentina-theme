@@ -1,0 +1,251 @@
+/*Header */
+body {
+	padding-top: 45px;
+}
+
+.navbar-inverse .navbar-brand h1 {
+	font-weight: 900;
+	font-style: italic;
+	margin-top: 7px;
+	opacity: 1;
+	color: #fff;
+}
+
+.navbar-brand p {
+	font-style: italic;
+	font-size: 16px;
+	margin-top: -12px;
+	float: right;
+	color: rgba(255, 255, 255, 0.81);
+}
+
+#video-electoral .modal-dialog {
+	width: 620px;
+}
+
+/*Footer*/
+
+.logos-footer {
+	border-top: 1px solid #48515F;
+	margin-top: 20px;
+	padding-top: 30px;
+}
+
+#footer .extra-footer img {
+	opacity: 0.8;
+}
+
+#footer .extra-footer img:hover {
+	opacity: 1;
+}
+
+/*Infografia proipaganda electoral*/
+
+@font-face {
+    font-family: 'officina';
+    src: url('fonts/officinasansstd-book-webfont.eot');
+    src: url('fonts/officinasansstd-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/officinasansstd-book-webfont.woff') format('woff'),
+         url('fonts/officinasansstd-book-webfont.ttf') format('truetype'),
+         url('fonts/officinasansstd-book-webfont.svg#itc_officina_sans_std_bookRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+li {
+	list-style-type: none;
+}
+
+.img_infografia {
+	position: relative;
+}
+
+.tt-wrapper li a img {
+	position: absolute;
+	top: 15px;
+	left: 0px;
+}
+.tt-wrapper li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 2px;
+    outline: none;
+    background: transparent url(../images/icons.png) no-repeat top left;
+    position: relative;
+}
+
+.tt-wrapper li .tt-1{
+	background-position: 0px 0px;
+	position: absolute;
+	top: 160px;
+	left: 110px;
+}
+
+.tt-wrapper li .tt-2{
+	background-position: -68px 0px;
+	position: absolute;
+	top: 222px;
+	left: 128px;
+}
+
+.tt-wrapper li .tt-3{
+	background-position: -136px 0px;
+	position: absolute;
+	top: 170px;
+	left: 222px;
+}
+
+.tt-wrapper li .tt-4{
+    background-position: -204px 0px;
+	position: absolute;
+	top: 255px;
+	left: 92px;
+}
+
+.tt-wrapper li .tt-5{
+    background-position: -272px 0px;
+	position: absolute;
+	top: 151px;
+	left: 259px;
+}
+
+.tt-wrapper li .tt-6{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 120px;
+	left: 310px;
+}
+
+.tt-wrapper li .tt-7{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 88px;
+	left: 365px;
+}
+
+.tt-wrapper li .tt-8{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 250px;
+	left: 476px;
+}
+
+.tt-wrapper li .tt-9{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 266px;
+	left: 202px;
+}
+
+.tt-wrapper li .tt-10{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 218px;
+	left: 239px;
+}
+
+.tt-wrapper li .tt-11{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 320px;
+	left: 315px;
+}
+
+.tt-wrapper li .tt-12{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 412px;
+	left: 288px;
+}
+
+.tt-wrapper li .tt-13{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 450px;
+	left: 360px;
+}
+
+.tt-wrapper li .tt-14{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 419px;
+	left: 135px;
+}
+
+.tt-wrapper li .tt-15{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 412px;
+	left: 197px;
+}
+
+.tt-wrapper li .tt-16{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 456px;
+	left: 190px;
+}
+
+.tt-wrapper li .tt-17{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 126px;
+	left: 213px;
+}
+
+.tt-wrapper li .tt-18{
+	background-position: -272px 0px;
+	position: absolute;
+	top: 187px;
+	left: 410px;
+}
+
+.tt-wrapper li a span{
+	width: 170px;
+	height: auto;
+	line-height: 12px;
+	padding: 10px 10px 10px 40px;
+	left: 0%;
+	margin-left: -71px;
+	font-family: 'officina', Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	text-align: left;
+	border: 4px solid #fff;
+	background: rgba(255,255,255,0.9);
+	text-indent: 0px;
+	border-radius: 5px;
+	position: absolute;
+	pointer-events: none;
+	bottom: 100px;
+	opacity: 0;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.tt-wrapper li a span:before,
+.tt-wrapper li a span:after{
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    margin-left: -9px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(0,0,0,0.1);
+}
+
+.tt-wrapper li a span:after{
+    bottom: -14px;
+    margin-left: -10px;
+    border-top: 10px solid #fff;
+}
+
+.tt-wrapper li a:hover span{
+    opacity: 1;
+    bottom: 40px;
+}
