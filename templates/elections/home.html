@@ -12,11 +12,8 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <h2 class="text-center intro-home">
-        {% trans "Este 18 de Septiembre los chilenos elegiremos <strong>Presidente, Senadores, Diputados y Consejeros Regionales (CORE).</strong> Aquí encontrarás info para votar informado:" %}
+        {% trans "En las próximas elecciones elegiremos <strong>nuestros representantes.</strong> Aquí encontrarás info para votar informado:" %}
       </h2>
-      <p>
-        Bienvenido a la plataforma digital a través de la cual cualquier ciudadano/a puede informarse de los programas de gobierno de los diversos candidatos/as, sus perfiles, calendario electoral, lugares de votación u otros para un voto informado y consciente.
-      </p>
     </div>
   </div>
 
@@ -35,20 +32,20 @@
             jQuery(document).ready(function($){
               screenwidth = $(".containerAccordion").width();
               $('#gridaccordion-{{forloop.counter}}').gridAccordion({ 
-                width:screenwidth, height:250, columns:{{ featured_election.can_election.candidate_set.all|length }}, 
+                width:screenwidth, height:250, columns:{{ featured_election.candidates.all|length }}, 
                 distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true 
               });
             });
             </script>
             <ul class="accordion" id="gridaccordion-{{forloop.counter}}">
-              {% for candidate in featured_election.can_election.candidate_set.all %}
+              {% for candidate in featured_election.candidates.all %}
               <li>
-                  {% if candidate.photo %}
-                  {% thumbnail candidate.photo "x300" as im %}
-                    <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}"><img src="{{ im.url }}" alt="{{ candidate.name }}" border="0"/></a>
+                  {% if candidate.image %}
+                  {% thumbnail candidate.image "x300" as im %}
+                    <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}"><img src="{{ im.url }}" alt="{{ candidate.name }}" border="0"/></a>
                   {% endthumbnail %}
                   {% else %}
-                    <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive"></a>
+                    <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive"></a>
                   {% endif %}
                   <div class="caption">{{ candidate.name }}</div>
               </li>
@@ -74,20 +71,20 @@
             jQuery(document).ready(function($){
               screenwidth = $(".containerAccordion").width();
               $('#gridaccordion-{{forloop.counter}}').gridAccordion({
-                width:screenwidth, height:250, columns:{{ featured_election.can_election.candidate_set.all|length }}, 
+                width:screenwidth, height:250, columns:{{ featured_election.candidates.all|length }}, 
                 distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true
               });
             });
             </script>
             <ul class="accordion" id="gridaccordion-{{forloop.counter}}">
-              {% for candidate in featured_election.can_election.candidate_set.all %}
+              {% for candidate in featured_election.candidates.all %}
               <li>
-                {% if candidate.photo %}
-                  {% thumbnail candidate.photo "x300" as im %}
-                    <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}"><img src="{{ im.url }}" alt="{{ candidate.name }}" border="0"/></a>
+                {% if candidate.image %}
+                  {% thumbnail candidate.image "300x300" crop="center" as im %}
+                    <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}"><img src="{{ im.url }}" alt="{{ candidate.name }}" border="0"/></a>
                   {% endthumbnail %}
                 {% else %}
-                  <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive"></a>
+                  <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive"></a>
                 {% endif %}
                 <div class="caption">{{ candidate.name }}</div>
               </li>
@@ -112,20 +109,20 @@
           jQuery(document).ready(function($){
             screenwidth = $(".containerAccordion").width();
             $('#gridaccordion-{{forloop.counter}}').gridAccordion({
-              width:screenwidth, height:250, columns:{{featured_election.can_election.candidate_set.all|length}}, 
+              width:screenwidth, height:250, columns:{{featured_election.candidates.all|length}}, 
               distance:2, closedPanelWidth:10, closedPanelHeight:10, alignType:'centerCenter', linkTarget: "_self", slideshow:true
             });
           });
           </script>
           <ul class="accordion" id="gridaccordion-{{forloop.counter}}">
-            {% for candidate in featured_election.can_election.candidate_set.all %}
+            {% for candidate in featured_election.candidates.all %}
             <li>
-              {% if candidate.photo %}
-                {% thumbnail candidate.photo "x300" as im %}
-                  <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}"><img src="{{ im.url }}" alt="{{ candidate.name }}" border="0"/></a>
+              {% if candidate.image %}
+                {% thumbnail candidate.image "x300" as im %}
+                  <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}"><img src="{{ im.url }}" alt="{{ candidate.name }}" border="0"/></a>
                 {% endthumbnail %}
               {% else %}
-                <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive"></a>
+                <a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}"><img src="{% static 'img/candidate-default.jpg' %}" alt="{{candidate.name}}" border="0" class="img-responsive"></a>
               {% endif %}
               <div class="caption">{{ candidate.name }}</div>
             </li>
@@ -152,8 +149,8 @@
       <h3><a href="{{ featured_election.get_absolute_url }}">{{featured_election.name}}</a></h3>
 
       <ul>
-      {% for candidate in featured_election.can_election.candidate_set.all %}
-        <li><a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.slug %}">{{ candidate.name }}</a></li>
+      {% for candidate in featured_election.candidates.all %}
+        <li><a href="{% url 'candidate_detail_view' election_slug=featured_election.slug slug=candidate.id %}">{{ candidate.name }}</a></li>
       {% endfor %}
       </ul>
     {% endfor %}
@@ -163,7 +160,7 @@
   <!-- Searchable Elections  -->
   {% if searchable_elections_enabled %}
 
-  <h2>{% trans "Encuentra información del resto de los candidatos y candidatas buscando por departamento" %}</h2>
+  <h2>{% trans "Encuentra tus candidatos" %}</h2>
 
     <div id="home-search" class="row" data-ng-controller="searchFormController">      
 
@@ -173,7 +170,7 @@
                 <span class="input-group-btn">
                   <button class="btn btn-default"><i class="icon-search"></i></button>
                 </span>
-                <input type="text" class="form-control" ng-enter="console.log('something')" id="id_q" name="q" placeholder="{% trans "Ingresa el nombre de tu departamento" %}" autocomplete="off" data-ng-model="searchElection">
+                <input type="text" class="form-control" ng-enter="console.log('something')" id="id_q" name="q" placeholder="{% trans "Ingresa el nombre de tu comuna" %}" autocomplete="off" data-ng-model="searchElection">
                 <span class="input-group-btn">
                   <button class="btn btn-default" type="button">{% trans "Buscar" %}</button>
                 </span>
@@ -202,13 +199,13 @@
         <div class="container">
           <div class="row">
               <div class="col-md-4">
-                <a href="//www.dipity.com/boliviatransparente/Calendario-Electoral-Elecciones-Generales-2014/?mode=fs" target="_blank"><img src="{% static 'img/banner-01.png' %}" alt=""></a>
+                <img src="{% static 'img/dummy-img.jpg' %}">
               </div>
               <div class="col-md-4">
-                <a href="//www.youtube.com/channel/UC_3Cg0F7ebvZDLMaaBl3-8A/videos" target="_blank"><img src="{% static 'img/banner-02.png' %}" alt=""></a>
+                <img src="{% static 'img/dummy-img.jpg' %}">
               </div>
               <div class="col-md-4">
-                <a href="//www.yoreportobolivia.org/" target="_blank"><img src="{% static 'img/banner-03.png' %}" alt=""></a>
+                 <img src="{% static 'img/dummy-img.jpg' %}">
               </div>
           </div>
       </div>
